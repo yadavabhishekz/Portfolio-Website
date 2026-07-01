@@ -1,4 +1,3 @@
-// TODO: check spacing on mobile
 /**
  * SkillsCard.jsx — Editorial B&W skills with bordered uppercase pills.
  * Grouped categories with icons, horizontal rule dividers.
