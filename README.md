@@ -1,5 +1,7 @@
 # Abhishek Yadav — AI Portfolio
 
+**Live:** [yadavabhishekz.tech](https://yadavabhishekz.tech)
+
 A personal portfolio where the whole experience is a chat. Visitors ask questions (or click a quick-question pill) and the AI answers in my voice, grounded in my real project write-ups, while opening an interactive card: projects, a single project's deep dive, skills, experience, resume, contact, or how the site itself works.
 
 **Stack:** React · Vite · Tailwind CSS · FastAPI · LangChain · Groq (`gpt-oss-120b`) · BM25 retrieval
@@ -108,3 +110,9 @@ Free hosting tiers sleep when idle, so the first visit after a quiet period take
 - Facts the chatbot uses: `backend/knowledge/*.md` (front matter: `title`, `source`; sections start with `## `).
 - What the cards show: `frontend/src/data.js`.
 - Adding a project: add it to both, plus its id to `ProjectId` in `backend/tools.py` — `tests/test_tools.py` fails if the ids drift apart.
+
+## License
+
+The **code** is released under the [MIT License](LICENSE) — feel free to learn from it or reuse it with attribution.
+
+My **personal content** — photo, resume, project screenshots, and the text about me in `backend/knowledge/`, `frontend/src/data.js`, and `backend/prompts.py` — is **all rights reserved** and not covered by the MIT License. If you fork this project, please replace it with your own.

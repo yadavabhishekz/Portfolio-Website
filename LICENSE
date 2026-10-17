@@ -1,0 +1,47 @@
+MIT License
+
+Copyright (c) 2026 Abhishek Yadav
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+PERSONAL CONTENT — NOT COVERED BY THE MIT LICENSE
+
+The MIT License above applies to the source code only. The following personal
+content is Copyright (c) 2026 Abhishek Yadav, All Rights Reserved, and may not
+be copied, modified, redistributed, or used to represent anyone else without
+prior written permission:
+
+  - Photographs and images of Abhishek Yadav
+      frontend/public/images/profile.jpg
+      frontend/public/og-image.png
+  - Resume files
+      frontend/public/resume.pdf
+      frontend/public/images/resume.png
+  - Project screenshots, diagrams, and outputs
+      frontend/public/images/projects/
+  - Biographical, professional, and project content (text describing
+    Abhishek Yadav, his experience, skills, projects, and hobbies)
+      backend/knowledge/
+      the personal data in frontend/src/data.js
+      the persona and "who I am" text in backend/prompts.py
+
+If you fork or reuse this project, replace all of the above with your own
+content.
