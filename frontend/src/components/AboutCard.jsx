@@ -15,11 +15,19 @@ export default function AboutCard() {
     <div className="animate-fade-in-up">
       <div className="bg-white rounded-xl border-2 border-neutral-900 p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row gap-6">
-          {/* Initials block */}
+          {/* Profile photo (falls back to an initials block) */}
           <div className="shrink-0 flex justify-center sm:justify-start">
-            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-xl bg-neutral-900 flex items-center justify-center text-white heading-display text-6xl sm:text-7xl">
-              {initials}
-            </div>
+            {ABOUT.photo ? (
+              <img
+                src={ABOUT.photo}
+                alt={ABOUT.name}
+                className="w-32 h-32 sm:w-40 sm:h-40 rounded-xl object-cover border-2 border-neutral-900"
+              />
+            ) : (
+              <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-xl bg-neutral-900 flex items-center justify-center text-white heading-display text-6xl sm:text-7xl">
+                {initials}
+              </div>
+            )}
           </div>
 
           {/* Info */}

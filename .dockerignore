@@ -1,0 +1,18 @@
+# Secrets never go into the image — set them as environment variables on the host
+**/.env
+**/.env.*
+!**/.env.example
+
+# Rebuilt inside the image
+**/node_modules
+frontend/dist
+
+# Not needed at runtime
+.git
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+backend/tests
+.vscode
+.idea
+README2.md

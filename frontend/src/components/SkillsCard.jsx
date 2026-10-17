@@ -2,26 +2,11 @@
  * SkillsCard.jsx — Editorial B&W skills with bordered uppercase pills.
  * Grouped categories with icons, horizontal rule dividers.
  */
-import { Code2, Server, Brain, Cloud, Users, Layout } from "lucide-react";
+import { ScanEye, Microscope, Gauge, Sparkles, Database, MessageSquare, Brain, BarChart3, Rocket, Code2 } from "lucide-react";
 import { SKILLS } from "../data";
 
-const SECTION_ICONS = {
-  "Frontend": Code2,
-  "Backend": Server,
-  "AI/ML": Brain,
-  "MLOps": Cloud,
-  "Soft Skills": Users,
-  "Layout": Layout,
-};
-
-function getIcon(groupName) {
-  for (const [key, Icon] of Object.entries(SECTION_ICONS)) {
-    if (groupName.toLowerCase().includes(key.toLowerCase())) {
-      return Icon;
-    }
-  }
-  return Code2;
-}
+// Icon names used by SKILLS in data.js
+const ICONS = { ScanEye, Microscope, Gauge, Sparkles, Database, MessageSquare, Brain, BarChart3, Rocket };
 
 export default function SkillsCard() {
   return (
@@ -32,7 +17,7 @@ export default function SkillsCard() {
 
       <div className="space-y-8">
         {SKILLS.map((group, idx) => {
-          const Icon = getIcon(group.category);
+          const Icon = ICONS[group.icon] || Code2;
           return (
             <div key={group.category}>
               {idx > 0 && <hr className="divider-editorial mb-8 opacity-20" />}

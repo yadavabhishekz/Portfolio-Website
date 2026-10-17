@@ -1,5 +1,4 @@
-/* ── Fonts ─────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Fonts are loaded in index.html (with preconnect) */
 
 @tailwind base;
 @tailwind components;
@@ -233,16 +232,23 @@ body {
 
 /* ── Project card (dark, editorial) ────────────────────────── */
 .project-card {
-  background: #0a0a0a;
-  color: #ffffff;
-  border: 1px solid #262626;
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 2px solid #171717;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.25s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Text cover for projects without a thumbnail image */
+.project-cover-text {
+  background-color: #f5f5f5;
+  background-image: radial-gradient(circle, #d4d4d4 0.8px, transparent 0.8px);
+  background-size: 14px 14px;
 }
 
 /* ── Button editorial (black solid) ────────────────────────── */
@@ -318,3 +324,49 @@ body {
   animation: modal-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+
+/* ── Help modal: narrower, vertically centered (margin:auto keeps it
+      scrollable on short screens, unlike align-items:center) ───── */
+.modal-narrow {
+  max-width: 720px;
+  margin: auto;
+}
+
+/* ── Bottom sheet (more prompts) ──────────────────────────────── */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.sheet-panel {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-sheet-in {
+  animation: sheet-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

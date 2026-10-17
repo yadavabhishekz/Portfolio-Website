@@ -1,0 +1,15 @@
+# Render Blueprint — New + > Blueprint > pick this repo. Secrets are entered in the dashboard.
+services:
+  - type: web
+    name: abhishek-yadav-portfolio
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      # Optional: extra keys, comma-separated (rotation + fallback on rate limits)
+      - key: GROQ_API_KEYS
+        sync: false

@@ -1,11 +1,11 @@
 /**
  * ChatInput — Editorial B&W text input with black send button.
- * Clean flat design, no glassmorphism.
+ * While a reply is streaming, the send button becomes a stop button.
  */
 import { useState } from "react";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Square } from "lucide-react";
 
-export default function ChatInput({ onSend, disabled }) {
+export default function ChatInput({ onSend, disabled, isStreaming, onStop }) {
   const [text, setText] = useState("");
 
   function handleSubmit(e) {
@@ -33,6 +33,7 @@ export default function ChatInput({ onSend, disabled }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Ask me anything"
+          maxLength={500}
           disabled={disabled}
           className="
             flex-1 bg-transparent outline-none
@@ -41,21 +42,32 @@ export default function ChatInput({ onSend, disabled }) {
             disabled:opacity-50
           "
         />
-        <button
-          type="submit"
-          disabled={disabled || !text.trim()}
-          className={`
-            p-2.5 rounded-full transition-all duration-200
-            ${
-              text.trim() && !disabled
-                ? "bg-neutral-900 text-white hover:bg-neutral-700"
-                : "bg-neutral-100 text-neutral-400 cursor-not-allowed"
-            }
-          `}
-          aria-label="Send message"
-        >
-          <ArrowUp size={18} strokeWidth={2.5} />
-        </button>
+        {isStreaming ? (
+          <button
+            type="button"
+            onClick={onStop}
+            className="p-2.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-700 transition-all duration-200"
+            aria-label="Stop generating"
+          >
+            <Square size={18} strokeWidth={2.5} fill="currentColor" />
+          </button>
+        ) : (
+          <button
+            type="submit"
+            disabled={disabled || !text.trim()}
+            className={`
+              p-2.5 rounded-full transition-all duration-200
+              ${
+                text.trim() && !disabled
+                  ? "bg-neutral-900 text-white hover:bg-neutral-700"
+                  : "bg-neutral-100 text-neutral-400 cursor-not-allowed"
+              }
+            `}
+            aria-label="Send message"
+          >
+            <ArrowUp size={18} strokeWidth={2.5} />
+          </button>
+        )}
       </div>
     </form>
   );

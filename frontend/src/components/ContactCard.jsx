@@ -1,48 +1,42 @@
 /**
- * ContactCard.jsx — Editorial B&W contact card.
- * Black bordered card with email link, plain social text links.
+ * ContactCard.jsx — Soft gray contact panel: heading + handle, email link,
+ * and a single row of plain social links.
  */
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { CONTACT } from "../data";
 
 export default function ContactCard() {
   return (
     <div className="animate-fade-in-up">
-      <div className="bg-white rounded-xl border-2 border-neutral-900 p-6 sm:p-8">
+      <div className="bg-neutral-100 rounded-3xl px-7 py-8 sm:px-14 sm:py-12">
         {/* Header row */}
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="heading-display text-4xl sm:text-5xl text-neutral-900">
-            Contacts
-          </h2>
-          <span className="text-sm text-neutral-400 font-medium tracking-wide">
-            {CONTACT.handle}
-          </span>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 mb-7">
+          <h2 className="heading-display text-5xl sm:text-6xl text-neutral-900">Contacts</h2>
+          <span className="text-[15px] text-neutral-900 font-medium">{CONTACT.handle}</span>
         </div>
 
         {/* Email */}
         <a
           href={`mailto:${CONTACT.email}`}
-          className="inline-flex items-center gap-2 text-neutral-900 text-[15px] font-semibold transition-colors group hover:text-neutral-500"
+          className="group inline-flex items-center gap-1.5 max-w-full text-base sm:text-xl font-semibold text-blue-600 hover:text-blue-800 transition-colors"
         >
-          {CONTACT.email}
-          <ArrowRight
-            size={16}
-            className="group-hover:translate-x-1 transition-transform"
+          <span className="min-w-0 break-words">{CONTACT.email}</span>
+          <ChevronRight
+            size={20}
+            strokeWidth={2.5}
+            className="shrink-0 group-hover:translate-x-1 transition-transform"
           />
         </a>
 
-        {/* Divider */}
-        <hr className="divider-editorial my-5 opacity-20" />
-
         {/* Social links */}
-        <div className="flex flex-wrap gap-x-8 gap-y-2">
+        <div className="flex flex-wrap gap-x-8 gap-y-2 mt-6">
           {CONTACT.socials.map((social) => (
             <a
               key={social.name}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors uppercase tracking-wider font-medium"
+              className="text-[15px] text-neutral-500 hover:text-neutral-900 transition-colors"
             >
               {social.name}
             </a>

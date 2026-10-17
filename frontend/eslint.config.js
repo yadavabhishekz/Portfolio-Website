@@ -5,9 +5,10 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
+  // Global ignore (an `ignores` key inside a config object only scopes that object)
+  { ignores: ['dist'] },
   {
     files: ['**/*.{js,jsx}'],
-    ignores: ['dist'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -29,6 +30,8 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
+      // The project doesn't use PropTypes
+      'react/prop-types': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

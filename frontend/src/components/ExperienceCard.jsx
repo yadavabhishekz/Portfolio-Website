@@ -55,6 +55,15 @@ export default function ExperienceCard() {
               <p className="text-neutral-600 text-[15px] leading-relaxed">
                 {exp.description}
               </p>
+              {exp.highlights?.length > 0 && (
+                <ul className="mt-3 space-y-1.5 list-disc pl-5 marker:text-neutral-400">
+                  {exp.highlights.map((h) => (
+                    <li key={h} className="text-neutral-600 text-[15px] leading-relaxed">
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {/* Tech stack pills */}

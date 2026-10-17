@@ -1,24 +1,46 @@
-# Dependencies
-node_modules/
-__pycache__/
-*.pyc
-
-# Environment variables
+# ── Secrets ───────────────────────────────────────────────────────
+# API keys live in backend/.env locally and in the host's env vars when deployed
 .env
+.env.*
+!.env.example
 
-# Build output
-frontend/dist/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Python virtual env
+# ── Dependencies ──────────────────────────────────────────────────
+node_modules/
 venv/
 .venv/
+env/
 
+# ── Build output (rebuilt by `npm run build` / the Dockerfile) ────
+frontend/dist/
+dist-ssr/
+*.local
+
+# ── Python caches & tooling ───────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ── Logs ──────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Editors & OS ──────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Personal notes / boilerplate not part of the project ──────────
 README2.md
+frontend/README.md
