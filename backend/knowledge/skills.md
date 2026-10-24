@@ -15,9 +15,6 @@ Hugging Face Transformers, spaCy (NER), NLTK, zero-shot classification (BART), f
 ## Computer vision
 Object detection, instance segmentation, Detectron2 (Mask R-CNN), D2Go, OpenCV, embedding-based visual recognition and similarity search, image preprocessing and enhancement, COCO annotations and evaluation metrics (AP, AR).
 
-## Research interests
-Visual representation learning, self-supervised learning, one-shot recognition, domain adaptation, local feature matching, image retrieval, model compression, image restoration.
-
 ## Model optimization and deployment
 TorchScript and ONNX export, FP16 inference, GPU memory optimization, lightweight mobile-oriented architectures, FastAPI inference services.
 

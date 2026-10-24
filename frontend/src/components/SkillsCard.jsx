@@ -2,11 +2,11 @@
  * SkillsCard.jsx — Editorial B&W skills with bordered uppercase pills.
  * Grouped categories with icons, horizontal rule dividers.
  */
-import { ScanEye, Microscope, Gauge, Sparkles, Database, MessageSquare, Brain, BarChart3, Rocket, Code2 } from "lucide-react";
+import { ScanEye, Gauge, Sparkles, Database, MessageSquare, Brain, BarChart3, Rocket, Code2 } from "lucide-react";
 import { SKILLS } from "../data";
 
 // Icon names used by SKILLS in data.js
-const ICONS = { ScanEye, Microscope, Gauge, Sparkles, Database, MessageSquare, Brain, BarChart3, Rocket };
+const ICONS = { ScanEye, Gauge, Sparkles, Database, MessageSquare, Brain, BarChart3, Rocket };
 
 export default function SkillsCard() {
   return (

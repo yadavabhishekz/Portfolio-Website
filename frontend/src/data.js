@@ -174,15 +174,6 @@ export const SKILLS = [
     ],
   },
   {
-    category: "Research Interests",
-    icon: "Microscope",
-    skills: [
-      "Visual Representation Learning", "Self-Supervised Learning", "One-Shot Recognition",
-      "Domain Adaptation", "Local Feature Matching", "Image Retrieval",
-      "Model Compression", "Image Restoration",
-    ],
-  },
-  {
     category: "Model Optimization & Deployment",
     icon: "Gauge",
     skills: ["TorchScript", "ONNX", "FP16 Inference", "GPU Memory Optimization", "Mobile Architectures"],
