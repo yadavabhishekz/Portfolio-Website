@@ -9,7 +9,7 @@
  */
 import { useState, useEffect, useRef, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
-import { ArrowRight, Info } from "lucide-react";
+import { Info } from "lucide-react";
 
 import AboutCard from "./components/AboutCard";
 import ProjectsCard from "./components/ProjectsCard";
@@ -124,22 +124,6 @@ function TypingIndicator() {
       <div className="typing-dot w-2 h-2 rounded-full bg-neutral-900" />
       <div className="typing-dot w-2 h-2 rounded-full bg-neutral-900" />
     </div>
-  );
-}
-
-// ── Footer ("How this site works" link) ─────────────────────
-function SiteFooter({ onHowItWorks, disabled, className = "" }) {
-  return (
-    <footer className={`text-center text-xs uppercase tracking-widest font-medium ${className}`}>
-      <button
-        onClick={onHowItWorks}
-        disabled={disabled}
-        className="group inline-flex items-center gap-1.5 text-neutral-500 hover:text-neutral-900 transition-colors uppercase tracking-widest font-semibold disabled:opacity-40"
-      >
-        How this site works
-        <ArrowRight size={12} strokeWidth={2.5} className="group-hover:translate-x-0.5 transition-transform" />
-      </button>
-    </footer>
   );
 }
 
@@ -479,13 +463,6 @@ export default function App() {
           />
         </div>
       </div>
-
-      {/* ── Footer ─────────────────────────────────────────── */}
-      <SiteFooter
-        className="mt-10"
-        onHowItWorks={() => sendMessage(HOW_IT_WORKS_QUESTION, "How it works")}
-        disabled={isLoading}
-      />
     </div>
   );
 }
